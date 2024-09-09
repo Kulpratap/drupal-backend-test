@@ -1,0 +1,6 @@
+services:
+  stream_access.access_check_subscriber:
+    class: Drupal\stream_access\EventSubscriber\AccessCheckSubscriber
+    arguments: ['@current_user']
+    tags:
+      - { name: event_subscriber }

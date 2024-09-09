@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains the main module file for the mymodule module.
+ */
+
+/**
+ * Implements hook_user_login().
+ */
+function redirect_login_path_user_login(\Drupal\user\UserInterface $account) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name !== 'user.reset.login') {
+    $current_request = \Drupal::service('request_stack')->getCurrentRequest();
+    if (!$current_request->query->get('destination')) {
+      $current_request->query->set(
+        'destination',
+        \Drupal\Core\Url::fromRoute('redirect_login_path.custom_page')->toString()
+      );
+    }
+  }
+}

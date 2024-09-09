@@ -1,0 +1,36 @@
+uuid: f3ac0d64-f18d-43ff-ba77-c5e3f658cee0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.assignments.field_media_file_1
+    - field.field.media.assignments.field_subject_names
+    - media.type.assignments
+  module:
+    - file
+id: media.assignments.default
+targetEntityType: media
+bundle: assignments
+mode: default
+content:
+  field_media_file_1:
+    type: file_default
+    label: visually_hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_subject_names:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

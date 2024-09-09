@@ -1,0 +1,8 @@
+name: 'Student Activity'
+type: module
+description: 'A module to display the top 5 active students based on login history.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - login_history:login_history
+version: 1.0

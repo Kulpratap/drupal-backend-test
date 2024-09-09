@@ -1,0 +1,7 @@
+name: 'Custom Menu'
+type: module
+description: 'A custom module to handle menu and page operations.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - user

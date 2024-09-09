@@ -1,0 +1,7 @@
+name: 'Notice Cleanup'
+type: module
+description: 'Custom module to clean up old notices based on event date.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:node

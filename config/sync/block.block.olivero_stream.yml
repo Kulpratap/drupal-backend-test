@@ -1,0 +1,33 @@
+uuid: 1014d9f4-edbd-4289-b7d8-f202c92b4556
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.stream
+  module:
+    - system
+    - user
+  theme:
+    - olivero
+id: olivero_stream
+theme: olivero
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:stream'
+settings:
+  id: 'system_menu_block:stream'
+  label: Stream
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      student: student

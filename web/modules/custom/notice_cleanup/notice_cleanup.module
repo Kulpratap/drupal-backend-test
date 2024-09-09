@@ -1,0 +1,32 @@
+<?php 
+/**
+ * This function delete the node of the notice content type if the event date pass the current date.
+ * Implements hook_cron().
+ * @return void
+ */
+function notice_cleanup_cron() {
+  
+  $current_time = \Drupal::time()->getRequestTime();
+
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'notice')
+    ->accessCheck(FALSE);
+
+  $nids = $query->execute();
+
+  if (!empty($nids)) {
+    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+
+    foreach ($nodes as $node) {
+      if ($node->hasField('field_date') && !$node->get('field_date')->isEmpty()) {
+
+        $field_date_value = $node->get('field_date')->value;
+        $field_date_timestamp = strtotime($field_date_value);
+        
+        if ($field_date_timestamp < $current_time) {
+          $node->delete();
+        }
+      }
+    }
+  }
+}

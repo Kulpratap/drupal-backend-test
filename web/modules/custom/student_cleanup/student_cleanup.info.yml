@@ -1,0 +1,7 @@
+name: 'Student Cleanup'
+type: module
+description: 'Deletes student records if the graduation date is more than 6 months old.'
+core_version_requirement: ^10 || ^9
+package: Custom
+dependencies:
+  - user

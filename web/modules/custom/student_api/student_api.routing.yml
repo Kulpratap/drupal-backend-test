@@ -1,0 +1,8 @@
+student_api.list:
+  path: '/api/students'
+  defaults:
+    _controller: '\Drupal\student_api\Controller\StudentApiController::listStudents'
+    _title: 'Student API'
+  requirements:
+    _permission: 'access content'
+  methods: [GET]

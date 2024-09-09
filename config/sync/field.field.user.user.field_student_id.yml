@@ -1,0 +1,20 @@
+uuid: d0c6d0d3-a4a5-43d1-aa27-c0d3a8e8b5e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_student_id
+  module:
+    - user
+id: user.user.field_student_id
+field_name: field_student_id
+entity_type: user
+bundle: user
+label: 'Student Id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

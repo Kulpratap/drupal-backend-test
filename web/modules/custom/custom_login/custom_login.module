@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implements hook_mail().
+ */
+function custom_login_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'otp_verification':
+      $message['subject'] = $params['subject'];
+
+      $message['body'][] = $params['message'];
+      break;
+      
+    case 'student_notification':
+      $message['subject'] = $params['subject'];
+
+      $message['body'][] = $params['message'];
+      break;
+
+    case 'admin_notification':
+      $message['subject'] = $params['subject'];
+
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
+

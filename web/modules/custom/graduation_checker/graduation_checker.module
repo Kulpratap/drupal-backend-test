@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ */
+function graduation_checker_cron() {
+  $current_year = date('Y');
+
+  $query = \Drupal::entityTypeManager()->getStorage('user')->getQuery();
+  $user_ids = $query
+    ->condition('status', 1)
+    ->condition('roles', 'student')
+    ->execute();
+
+  $users = \Drupal::entityTypeManager()->getStorage('user')->loadMultiple($user_ids);
+
+  foreach ($users as $user) {
+    if ($user->hasField('field_passing_year')) {
+      $passing_year = $user->get('field_passing_year')->value;
+
+      if ($passing_year && $passing_year < $current_year) {
+        if (!in_array('graduated', $user->getRoles())) {
+          $user->addRole('graduated');
+          $user->save();
+        }
+      } else {
+        if (in_array('graduated', $user->getRoles())) {
+          $user->removeRole('graduated');
+          $user->save();
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_node_access().
+ * Restrict access to certain content types for graduated students.
+ */
+function graduation_checker_node_access(\Drupal\node\NodeInterface $node, $op, \Drupal\Core\Session\AccountInterface $account) {
+  if (in_array('graduated', $account->getRoles())) {
+    $restricted_content_types = ['study_materials', 'assignments', 'notice'];
+    if (in_array($node->bundle(), $restricted_content_types)) {
+      return \Drupal\Core\Access\AccessResult::forbidden();
+    }
+  }
+  return \Drupal\Core\Access\AccessResult::neutral();
+}
+
+/**
+ * Implements hook_entity_access().
+ * Restrict access to taxonomy terms and other entities for graduated students.
+ */
+function graduation_checker_entity_access(\Drupal\Core\Entity\EntityInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
+
+  if (in_array('graduated', $account->getRoles())) {
+    if ($entity->getEntityTypeId() == 'taxonomy_term' && $operation == 'view') {
+      return \Drupal\Core\Access\AccessResult::forbidden();
+    }
+  }
+  return \Drupal\Core\Access\AccessResult::neutral();
+}

@@ -1,0 +1,39 @@
+uuid: cb5b7d8b-881e-4d42-a870-5a7288796665
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.notice.body
+    - field.field.node.notice.field_date
+    - node.type.notice
+  module:
+    - datetime
+    - text
+    - user
+id: node.notice.default
+targetEntityType: node
+bundle: notice
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * This function delete the user if the graduation year of the student is six year old.
+ * Implements hook_cron().
+ */
+function student_cleanup_cron() {
+
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $storage = $entity_type_manager->getStorage('user');
+  $current_time = \Drupal::time()->getRequestTime();
+
+  $query = $storage->getQuery()
+    ->condition('status', 1)
+    ->condition('field_passing_year', NULL, 'IS NOT NULL')
+    ->condition('roles', 'student')
+    ->accessCheck(FALSE);
+
+  $uids = $query->execute();
+
+  if (!empty($uids)) {
+
+    $users = $storage->loadMultiple($uids);
+
+    foreach ($users as $user) {
+      if ($user->hasField('field_passing_year') && !$user->get('field_passing_year')->isEmpty()) {
+        $passing_year = $user->get('field_passing_year')->value;
+
+        $passing_date = strtotime($passing_year . '-12-31');
+
+        $cutoff_date = strtotime('+6 months', $passing_date);
+
+        if ($current_time >= $cutoff_date) {
+          $user->delete();
+        }
+      }
+    }
+  }
+}

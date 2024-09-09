@@ -1,0 +1,34 @@
+uuid: 66d4b4dc-5c4a-472c-ae70-182b17d5b473
+langcode: en
+status: true
+dependencies:
+  module:
+    - student_activity
+    - system
+    - user
+  theme:
+    - olivero
+id: olivero_topactivestudents
+theme: olivero
+region: content_above
+weight: 0
+provider: null
+plugin: top_active_students_block
+settings:
+  id: top_active_students_block
+  label: 'Top Active Students'
+  label_display: visible
+  provider: student_activity
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /home
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      academic_head: academic_head

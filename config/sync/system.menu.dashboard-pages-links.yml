@@ -1,0 +1,8 @@
+uuid: c24faa10-ef68-44d8-8fda-d24578ac7462
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard-pages-links
+label: 'Dashboard Pages Links'
+description: ''
+locked: false
