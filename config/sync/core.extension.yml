@@ -34,16 +34,21 @@ module:
   menu_ui: 0
   mysql: 0
   node: 0
+  notice_cleanup: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
   redirect_login_path: 0
+  rest: 0
   search: 0
+  serialization: 0
   shortcut: 0
   smtp: 0
   stream_access: 0
   student_activity: 0
+  student_api: 0
+  student_cleanup: 0
   system: 0
   taxonomy: 0
   text: 0
