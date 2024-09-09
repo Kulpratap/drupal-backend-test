@@ -1,0 +1,7 @@
+name: 'Custom Login'
+type: module
+description: 'Custom login form with OTP verification.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:user

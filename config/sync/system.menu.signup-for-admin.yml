@@ -1,0 +1,8 @@
+uuid: 7d599690-14f0-4e43-af4e-d825321aad0e
+langcode: en
+status: true
+dependencies: {  }
+id: signup-for-admin
+label: 'Signup for admin'
+description: ''
+locked: false

@@ -1,0 +1,39 @@
+uuid: 2a302257-38dc-4776-afd7-0f93f55f2831
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_joining_year
+    - field.field.user.user.field_passing_year
+    - field.field.user.user.field_stream
+    - field.field.user.user.field_student_id
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  user_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_joining_year: true
+  field_passing_year: true
+  field_stream: true
+  field_student_id: true
+  member_for: true

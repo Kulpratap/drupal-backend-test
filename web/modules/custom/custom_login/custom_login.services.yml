@@ -1,0 +1,6 @@
+services:
+  custom_login.otp_verification:
+    class: Drupal\custom_login\Form\OtpVerificationForm
+    arguments: ['@state', '@plugin.manager.mail', '@messenger']
+    tags:
+      - { name: form }

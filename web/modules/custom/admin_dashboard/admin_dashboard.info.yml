@@ -1,0 +1,7 @@
+name: 'Admin Dashboard'
+type: module
+description: 'Provides an admin dashboard to view student activity and asset usage.'
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:user
+  - drupal:views

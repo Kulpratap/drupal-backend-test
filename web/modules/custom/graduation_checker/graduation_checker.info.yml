@@ -1,0 +1,7 @@
+name: 'Graduation Checker'
+type: module
+description: 'Restricts access to certain content types and taxonomies for graduated students.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:user

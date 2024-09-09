@@ -1,0 +1,13 @@
+uuid: 19ed9e2d-321a-4c59-bfe1-84a40ab3d0ca
+langcode: en
+status: true
+dependencies: {  }
+id: assignments
+label: Assignments
+description: 'Assignments of Subjects.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file_1
+field_map: {  }

@@ -1,0 +1,27 @@
+uuid: df71af3a-2418-48ab-abd5-6a3f7ee8be90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.study_materials
+  module:
+    - file
+id: media.study_materials.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: study_materials
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt doc docx pdf'
+  max_filesize: ''
+  description_field: false
+field_type: file

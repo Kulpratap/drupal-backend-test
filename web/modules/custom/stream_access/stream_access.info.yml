@@ -1,0 +1,6 @@
+name: 'Stream Access'
+type: module
+description: 'Restricts access to taxonomy terms based on user stream.'
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - user

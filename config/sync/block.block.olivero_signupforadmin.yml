@@ -1,0 +1,33 @@
+uuid: 9aecd506-5286-4b27-9ffa-c415388495d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.signup-for-admin
+  module:
+    - system
+    - user
+  theme:
+    - olivero
+id: olivero_signupforadmin
+theme: olivero
+region: secondary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:signup-for-admin'
+settings:
+  id: 'system_menu_block:signup-for-admin'
+  label: 'Signup for admin'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

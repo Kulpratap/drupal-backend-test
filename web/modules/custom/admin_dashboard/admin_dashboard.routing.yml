@@ -1,0 +1,7 @@
+admin_dashboard.inactive_students:
+  path: '/admin/dashboard/inactive-students'
+  defaults:
+    _controller: '\Drupal\admin_dashboard\Controller\DashboardController::inactiveStudents'
+    _title: 'Inactive Students'
+  requirements:
+    _permission: 'administer site configuration'

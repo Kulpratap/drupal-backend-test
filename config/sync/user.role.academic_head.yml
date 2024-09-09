@@ -1,0 +1,35 @@
+uuid: a9164d17-00c7-47e6-83c0-1e3629eec996
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.assignments
+    - media.type.study_materials
+    - media.type.video
+    - node.type.subjects
+  module:
+    - file
+    - media
+    - node
+    - toolbar
+id: academic_head
+label: 'Academic Head'
+weight: 4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access toolbar'
+  - 'create assignments media'
+  - 'create study_materials media'
+  - 'create subjects content'
+  - 'create video media'
+  - 'delete own assignments media'
+  - 'delete own study_materials media'
+  - 'delete own subjects content'
+  - 'delete own video media'
+  - 'edit own assignments media'
+  - 'edit own study_materials media'
+  - 'edit own subjects content'
+  - 'edit own video media'

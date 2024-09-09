@@ -1,0 +1,41 @@
+uuid: 8d7c21b7-a78a-470c-9ddc-3504e5511123
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.ass
+  module:
+    - node
+    - user
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__ass_block_1
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:ass-block_1'
+settings:
+  id: 'views_block:ass-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      subjects: subjects
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

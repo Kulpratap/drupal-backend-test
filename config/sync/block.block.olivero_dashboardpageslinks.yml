@@ -1,0 +1,33 @@
+uuid: 04258e40-9e48-4aa4-b2af-f36013634d6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.dashboard-pages-links
+  module:
+    - system
+    - user
+  theme:
+    - olivero
+id: olivero_dashboardpageslinks
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:dashboard-pages-links'
+settings:
+  id: 'system_menu_block:dashboard-pages-links'
+  label: 'Dashboard Pages Links'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator

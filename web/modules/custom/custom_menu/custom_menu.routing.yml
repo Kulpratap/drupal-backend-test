@@ -1,0 +1,8 @@
+custom_menu.stream_redirect:
+  path: '/stream-redirect'
+  defaults:
+    _controller: '\Drupal\custom_menu\Controller\StreamRedirectController::redirectToStream'
+    _title: 'Redirecting...'
+  requirements:
+    _permission: 'access content'
+

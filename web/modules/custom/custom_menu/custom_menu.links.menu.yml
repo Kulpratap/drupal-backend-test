@@ -1,0 +1,5 @@
+custom_menu.stream_menu:
+  title: 'My Stream'
+  route_name: 'custom_menu.stream_redirect'
+  menu_name: 'stream'
+  weight: 0

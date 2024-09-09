@@ -1,0 +1,5 @@
+name: 'Redirect path'
+type: module
+description: Redirect the login path to home'
+core_version_requirement: ^10
+package: Custom

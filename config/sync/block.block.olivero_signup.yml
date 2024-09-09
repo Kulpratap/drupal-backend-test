@@ -1,0 +1,33 @@
+uuid: 584e542e-d178-4936-b98a-e9b992655764
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.signup
+  module:
+    - system
+    - user
+  theme:
+    - olivero
+id: olivero_signup
+theme: olivero
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:signup'
+settings:
+  id: 'system_menu_block:signup'
+  label: Signup
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

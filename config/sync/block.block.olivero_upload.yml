@@ -1,0 +1,34 @@
+uuid: a5762804-53a5-432e-9f89-ae20f97af0aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.upload
+  module:
+    - system
+    - user
+  theme:
+    - olivero
+id: olivero_upload
+theme: olivero
+region: sidebar
+weight: -10
+provider: null
+plugin: 'system_menu_block:upload'
+settings:
+  id: 'system_menu_block:upload'
+  label: Upload
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      academic_head: academic_head

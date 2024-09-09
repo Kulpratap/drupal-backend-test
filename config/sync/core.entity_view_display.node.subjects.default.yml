@@ -1,0 +1,30 @@
+uuid: 43053db0-c1e4-462f-9d5f-cd6012df83e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.subjects.body
+    - field.field.node.subjects.field_stream
+    - node.type.subjects
+  module:
+    - text
+    - user
+id: node.subjects.default
+targetEntityType: node
+bundle: subjects
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_stream: true
